@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase Init Check</title>
+</head>
+<body>
+  <h2>Firebase Initialization Test</h2>
+  <div id="status" style="font-size: 18px; color: blue;">Checking Firebase...</div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script>
+    try {
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnlBsn1qsldDt38Y-psWH_qDtTfkWpvHQ",
+        authDomain: "chuo-hub.firebaseapp.com",
+        projectId: "chuo-hub",
+        storageBucket: "chuo-hub.appspot.com",
+        messagingSenderId: "1065722849697",
+        appId: "1:1065722849697:web:1e632dd1eeda35dd83c3e0"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      document.getElementById("status").innerText =
+        "Firebase initialized successfully!";
+      document.getElementById("status").style.color = "green";
+    } catch (error) {
+      document.getElementById("status").innerText =
+        "Firebase failed to initialize: " + error.message;
+      document.getElementById("status").style.color = "red";
+    }
+  </script>
+</body>
+</html>
